@@ -105,3 +105,96 @@ The script trains both Holt-Winters and SARIMA models and evaluates their perfor
 ### <ins>License</ins>
 
 This project is licensed under the [MIT License](LICENSE).
+
+
+# Use Case-2
+## BDD Test Case and Playwright Script Generator
+
+This project generates Behavior-Driven Development (BDD) test cases and basic Playwright test scripts from user stories and acceptance criteria. It utilizes natural language processing (NLP) techniques to process text and a pre-trained language model to generate test cases automatically.
+
+### Table of Contents
+
+- Installation
+- Usage
+- Features
+- Code explanation
+- Technologies Used
+- License
+  
+### <ins>Installation</ins>
+
+  **Create a virtual environment:**
+
+    python -m venv venv
+    venv\Scripts\activate  # On Windows
+    source venv/bin/activate # On macOS and Linux
+
+  **Install the required dependencies:**
+
+    pip install -r requirements.txt
+   
+    Create a `requirements.txt` file with the following contents:
+
+    pandas
+    nltk
+    transformers
+    torch
+
+  **Download NLTK's `punkt` tokenizer:**
+
+    The script automatically downloads the `punkt` tokenizer if it's not already present.
+
+    python
+    import nltk
+    nltk.download('punkt')
+
+ ### <ins>Usage</ins>
+
+1.  **Run the Python script:**
+
+    python generate_tests.py
+
+    (Assuming the python file is called generate_tests.py)
+
+2.  **View the output:**
+
+    The script will print a Pandas DataFrame containing the user stories, acceptance criteria, generated BDD test cases, and Playwright scripts. It will also create a directory named `playwright_tests` containing the generated Playwright test scripts.
+
+### <ins>Code Explanation</ins>
+1.  **Data Preparation:**
+    -   User stories and acceptance criteria are stored in lists.
+    -   A Pandas DataFrame is created to organize the data.
+    -   Acceptance criteria are tokenized using NLTK's `word_tokenize`.
+
+2.  **BDD Test Case Generation:**
+    -   The `distilgpt2` model is used to generate BDD test cases from user stories and acceptance criteria.
+    -   A prompt is constructed to guide the model's output.
+    -   The generated text is parsed to extract the BDD test case.
+
+3.  **Playwright Script Generation:**
+    -   Basic Playwright scripts are generated from the BDD test cases.
+    -   The script creates a skeleton test with the test name derived from the BDD test case.
+    -   The generated scripts provide a starting point for writing more detailed tests.
+
+4.  **Output:**
+The output includes:
+    -   User stories and acceptance criteria.
+    -   Generated BDD test cases.
+    -   Corresponding Playwright test scripts saved in a dedicated directory.
+
+### <ins>Technologies Used</ins>
+ - Python
+ - Pandas (for data manipulation)
+ - NLTK (for natural language processing)
+ - Transformers (for text generation using pre-trained models)
+ - Playwright (for automated testing)
+    
+### <ins>Features</ins>
+-  **User Story Input:** Define user stories that describe desired functionalities.
+-  **Acceptance Criteria:** Specify acceptance criteria that outline conditions for success.
+-  **BDD Test Case Generation:** Automatically generate BDD test cases based on user stories 
+     and acceptance criteria using a pre-trained language model.
+-  **Playwright Script Generation:** Create basic Playwright test scripts from generated BDD test cases for automated testing.
+
+### <ins>License</ins>
+This project is licensed under the MIT License.
