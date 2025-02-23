@@ -11,8 +11,8 @@ This project aims to build a simple API for rainfall prediction model using time
 - Technologies Used
 - License
 
-### Installation
-### <ins>Install required packages:</ins>
+### <ins>Installation</ins>
+### Install required packages:
 Make sure you have Python installed, then install the necessary libraries using pip:
  
     pip install -r requirements.txt
@@ -26,7 +26,7 @@ Make sure you have Python installed, then install the necessary libraries using 
     joblib
     pmdarima
   
-### <ins>Download the dataset:</ins>
+### Download the dataset:
 Ensure that you have the ("Rainfall_data.csv") file in the root directory of the project.
 
 ### <ins>Usage</ins>
